@@ -73,7 +73,7 @@ def isValidName():
 	return True
 def isValidCreditHours():
 	global a
-	a=int(input("enter credit Hours"))
+	a=int(input("enter credit Hours"))            //good programming
 	Num=[1,2,3]
 	if a in Num:
 		List_of_creditHours[y]=a
@@ -248,4 +248,6 @@ while g<=6:
 	if g==7:
 		Save_Courses()
 		Exit_program()
+		//welldone asma eman 
+		//keep it up
 		
