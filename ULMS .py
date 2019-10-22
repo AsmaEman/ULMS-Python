@@ -4,6 +4,7 @@ List_of_creditHours=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 List_of_sem=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 List_of_users=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 List_of_passwords=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+#global variables
 global x
 global j
 global a
@@ -13,7 +14,7 @@ global S
 print("**Welcome to University Learning Managment System**")
 print("Dear User, current software is intended for authorised users only.")
 print("Login the system to get access.")
-def Load_User():
+def Load_User():# loading information from external files
 	import os
 	filePath='user.txt'
 	if os.path.exists('user.txt'): 
@@ -94,7 +95,7 @@ isValidName
 isValidCreditHours
 isValidsemesters
 
-def Add_Course():
+def Add_Course():# function to add new course
 	print("Enter course details:")
 	isValidCourseCode()
 	isValidName()
@@ -103,7 +104,7 @@ def Add_Course():
 	s=[j,x,a,b]
 	print("your course details ",s)
 	return(s)
-def Update_Course():
+def Update_Course():# function to update course
 	
 	s=int(input("course to be changed: "))
 	List_of_codes[s]=0
@@ -143,7 +144,7 @@ def Update_Course():
 		
 
 				
-def Delete_Course():
+def Delete_Course():# function to delete course
 	s=int(input("course to be deleted: "))
 	List_of_codes[s]=0
 	List_of_Names[s]=0
@@ -157,7 +158,7 @@ def Delete_Course():
 	List_of_Names[0]=0
 	List_of_creditHours[0]=0
 	List_of_sem[0]=0
-def View_Courses():
+def View_Courses():# function to view courses
 	l=0
 	print(         "COURSE_CODE  ","COURSE_NAME  ","CREDIT_HOURS  ","SEMESTER")
 	while l<y:
@@ -166,7 +167,7 @@ def View_Courses():
 			print(S)
 		l+=1
 
-def View_Courses_of_a_semester():
+def View_Courses_of_a_semester():# function to view courses of a semester
 	n=int(input("choose semester: "))
 	print("COURSE_CODE ","COURSE_NAME ","CREDIT_HOURS ")
 	e=0
@@ -182,7 +183,7 @@ def Exit_program():
 	quit()
 	return()
 
-def Save_Courses():
+def Save_Courses():# function that save courses
 	with open('courses.txt') as wf:
 		l =0
 		global y
